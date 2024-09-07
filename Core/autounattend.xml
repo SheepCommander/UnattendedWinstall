@@ -207,7 +207,7 @@
         </RunSynchronousCommand>
         <RunSynchronousCommand wcm:action="add">
           <Order>12</Order>
-          <Path>cmd.exe /c "netsh.exe wlan connect name="E98155" ssid="E98155" &gt;&gt;"%TEMP%\wifi.log" 2&gt;&amp;1"</Path>
+          <Path>cmd.exe /c "netsh.exe wlan connect name="NETGEAR98" ssid="NETGEAR98" &gt;&gt;"%TEMP%\wifi.log" 2&gt;&amp;1"</Path>
         </RunSynchronousCommand>
         <!--Automatically sign into SheepCommander's wifi part 1-->
       </RunSynchronous>
