@@ -199,8 +199,8 @@
       </RunSynchronous>
     </component>
     <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
-			<ComputerName>SheepPC</ComputerName>
-	  </component>
+      <ComputerName>SheepPC</ComputerName>
+    </component>
   </settings>
   <settings pass="auditSystem"></settings>
   <settings pass="auditUser"></settings>
@@ -213,27 +213,27 @@
       <UserLocale>en-US</UserLocale>
     </component>
     <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
-			<UserAccounts>
-				<LocalAccounts>
-					<LocalAccount wcm:action="add">
-						<Name>Sheep</Name>
-						<Group>Administrators</Group>
-						<Password>
-							<Value>20255</Value>
-							<PlainText>true</PlainText>
-						</Password>
-					</LocalAccount>
-				</LocalAccounts>
-			</UserAccounts>
-			<AutoLogon>
-				<Username>Sheep</Username>
-				<Enabled>true</Enabled>
-				<LogonCount>1</LogonCount>
-				<Password>
-					<Value>20255</Value>
-					<PlainText>true</PlainText>
-				</Password>
-			</AutoLogon>
+      <UserAccounts>
+        <LocalAccounts>
+          <LocalAccount wcm:action="add">
+            <Name>Sheep</Name>
+            <Group>Administrators</Group>
+            <Password>
+              <Value>20255</Value>
+              <PlainText>true</PlainText>
+            </Password>
+          </LocalAccount>
+        </LocalAccounts>
+      </UserAccounts>
+      <AutoLogon>
+        <Username>Sheep</Username>
+        <Enabled>true</Enabled>
+        <LogonCount>1</LogonCount>
+        <Password>
+          <Value>20255</Value>
+          <PlainText>true</PlainText>
+        </Password>
+      </AutoLogon>
       <OOBE>
         <HideEULAPage>true</HideEULAPage>
         <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
@@ -243,14 +243,14 @@
         <ProtectYourPC>3</ProtectYourPC>
       </OOBE>
       <FirstLogonCommands>
-				<SynchronousCommand wcm:action="add">
-					<Order>1</Order>
-					<CommandLine>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /t REG_DWORD /d 0 /f</CommandLine>
-				</SynchronousCommand>
-				<SynchronousCommand wcm:action="add">
-					<Order>2</Order>
-					<CommandLine>powershell.exe -NoProfile -Command "Disable-ComputerRestore -Drive 'C:\';"</CommandLine>
-				</SynchronousCommand>
+        <SynchronousCommand wcm:action="add">
+          <Order>1</Order>
+          <CommandLine>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /t REG_DWORD /d 0 /f</CommandLine>
+        </SynchronousCommand>
+        <SynchronousCommand wcm:action="add">
+          <Order>2</Order>
+          <CommandLine>powershell.exe -NoProfile -Command "Disable-ComputerRestore -Drive 'C:\';"</CommandLine>
+        </SynchronousCommand>
       </FirstLogonCommands>
     </component>
   </settings>
@@ -275,7 +275,7 @@ foreach( $file in $Document.unattend.Extensions.File ) {
     };
     [System.IO.File]::WriteAllBytes( $path, ( $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() ) ) );
 }
-		</ExtractScript>
+    </ExtractScript>
     <!--Removes Preinstalled Bloatware Apps-->
     <File path="C:\Windows\Setup\Scripts\remove-packages.ps1">
       <![CDATA[
@@ -1526,14 +1526,14 @@ $_Press_Enter
     <File path="C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml">
       <![CDATA[
 <LayoutModificationTemplate Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
-	<LayoutOptions StartTileGroupCellWidth="6" />
-	<DefaultLayoutOverride>
-		<StartLayoutCollection>
-			<StartLayout GroupCellWidth="6" xmlns="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" />
-		</StartLayoutCollection>
-	</DefaultLayoutOverride>
+  <LayoutOptions StartTileGroupCellWidth="6" />
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <StartLayout GroupCellWidth="6" xmlns="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" />
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
 </LayoutModificationTemplate>
-		]]>
+    ]]>
     </File>
   </Extensions>
 </unattend>
