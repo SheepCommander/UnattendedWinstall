@@ -196,6 +196,18 @@
           <Description>Remove Microsoft Edge</Description>
           <Path>cmd.exe /c "C:\Windows\Setup\Scripts\edgeremoval.bat &gt;&gt;"C:\Windows\Setup\Scripts\edgeremoval.log" 2&gt;&amp;1"</Path>
         </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>10</Order>
+          <Path>cmd.exe /c "netsh.exe wlan add profile filename="%TEMP%\wifi.xml" user=all &gt;&gt;"%TEMP%\wifi.log" 2&gt;&amp;1"</Path>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>11</Order>
+          <Path>cmd.exe /c "del "%TEMP%\wifi.xml""</Path>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>12</Order>
+          <Path>cmd.exe /c "netsh.exe wlan connect name="E98155" ssid="E98155" &gt;&gt;"%TEMP%\wifi.log" 2&gt;&amp;1"</Path>
+        </RunSynchronousCommand>
       </RunSynchronous>
     </component>
     <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
@@ -1541,5 +1553,59 @@ $_Press_Enter
 </LayoutModificationTemplate>
     ]]>
     </File>
+  </Extensions>
+  <Extensions xmlns="https://schneegans.de/windows/unattend-generator/">
+    <ExtractScript>
+param(
+    [xml] $Document
+);
+
+$scriptsDir = 'C:\Windows\Setup\Scripts\';
+foreach( $file in $Document.unattend.Extensions.File ) {
+    $path = [System.Environment]::ExpandEnvironmentVariables(
+        $file.GetAttribute( 'path' )
+    );
+    if( $path.StartsWith( $scriptsDir ) ) {
+        mkdir -Path $scriptsDir -ErrorAction 'SilentlyContinue';
+    }
+    $encoding = switch( [System.IO.Path]::GetExtension( $path ) ) {
+        { $_ -in '.ps1', '.xml' } { [System.Text.Encoding]::UTF8; }
+        { $_ -in '.reg', '.vbs', '.js' } { [System.Text.UnicodeEncoding]::new( $false, $true ); }
+        default { [System.Text.Encoding]::Default; }
+    };
+    [System.IO.File]::WriteAllBytes( $path, ( $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() ) ) );
+}
+    </ExtractScript>
+    <File path="%TEMP%\wifi.xml"><![CDATA[
+<WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
+  <name>NETGEAR98</name>
+  <SSIDConfig>
+    <SSID>
+      <hex>4E4554474541523938</hex>
+      <name>NETGEAR98</name>
+    </SSID>
+  </SSIDConfig>
+  <connectionType>ESS</connectionType>
+  <connectionMode>auto</connectionMode>
+  <MSM>
+    <security>
+      <authEncryption>
+        <authentication>WPA2PSK</authentication>
+        <encryption>AES</encryption>
+        <useOneX>false</useOneX>
+      </authEncryption>
+      <sharedKey>
+        <keyType>passPhrase</keyType>
+        <protected>false</protected>
+        <keyMaterial>livelyonion765</keyMaterial>
+      </sharedKey>
+    </security>
+  </MSM>
+  <MacRandomization xmlns="http://www.microsoft.com/networking/WLAN/profile/v3">
+    <enableRandomization>false</enableRandomization>
+    <randomizationSeed>776604696</randomizationSeed>
+  </MacRandomization>
+</WLANProfile>
+    ]]></File>
   </Extensions>
 </unattend>
