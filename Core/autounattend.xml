@@ -196,6 +196,7 @@
           <Description>Remove Microsoft Edge</Description>
           <Path>cmd.exe /c "C:\Windows\Setup\Scripts\edgeremoval.bat &gt;&gt;"C:\Windows\Setup\Scripts\edgeremoval.log" 2&gt;&amp;1"</Path>
         </RunSynchronousCommand>
+        <!--Automatically sign into SheepCommander's wifi part 1-->
         <RunSynchronousCommand wcm:action="add">
           <Order>10</Order>
           <Path>cmd.exe /c "netsh.exe wlan add profile filename="%TEMP%\wifi.xml" user=all &gt;&gt;"%TEMP%\wifi.log" 2&gt;&amp;1"</Path>
@@ -208,6 +209,7 @@
           <Order>12</Order>
           <Path>cmd.exe /c "netsh.exe wlan connect name="E98155" ssid="E98155" &gt;&gt;"%TEMP%\wifi.log" 2&gt;&amp;1"</Path>
         </RunSynchronousCommand>
+        <!--Automatically sign into SheepCommander's wifi part 1-->
       </RunSynchronous>
     </component>
     <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
@@ -1554,6 +1556,7 @@ $_Press_Enter
     ]]>
     </File>
   </Extensions>
+  <!--Automatically sign into SheepCommander's wifi part 2-->
   <Extensions xmlns="https://schneegans.de/windows/unattend-generator/">
     <ExtractScript>
 param(
@@ -1608,4 +1611,5 @@ foreach( $file in $Document.unattend.Extensions.File ) {
 </WLANProfile>
     ]]></File>
   </Extensions>
+  <!--Automatically sign into SheepCommander's wifi part 2-->
 </unattend>
