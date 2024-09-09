@@ -1581,11 +1581,11 @@ foreach( $file in $Document.unattend.Extensions.File ) {
     </ExtractScript>
     <File path="%TEMP%\wifi.xml"><![CDATA[
 <WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
-  <name>NETGEAR98</name>
+  <name>E98155</name>
   <SSIDConfig>
     <SSID>
-      <hex>4E4554474541523938</hex>
-      <name>NETGEAR98</name>
+      <hex>453938313535</hex>
+      <name>E98155</name>
     </SSID>
   </SSIDConfig>
   <connectionType>ESS</connectionType>
@@ -1600,13 +1600,13 @@ foreach( $file in $Document.unattend.Extensions.File ) {
       <sharedKey>
         <keyType>passPhrase</keyType>
         <protected>false</protected>
-        <keyMaterial>livelyonion765</keyMaterial>
+        <keyMaterial>WA98155!</keyMaterial>
       </sharedKey>
     </security>
   </MSM>
   <MacRandomization xmlns="http://www.microsoft.com/networking/WLAN/profile/v3">
     <enableRandomization>false</enableRandomization>
-    <randomizationSeed>776604696</randomizationSeed>
+    <randomizationSeed>1169834516</randomizationSeed>
   </MacRandomization>
 </WLANProfile>
     ]]></File>
