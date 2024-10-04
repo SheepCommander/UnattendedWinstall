@@ -1,3 +1,37 @@
+# SheepCommander's Unattended Windows Install
+See the Original README.md at the bottom for more information.
+
+This unattended file is based on the [**Core**](https://github.com/memstechtips/UnattendedWinstall/blob/main/Core/autounattend.xml) version of memstechtip's unattended files.
+
+### [**SheepCore**](https://github.com/SheepCommander/UnattendedWinstall/blob/main/SheepCore/autounattend.xml)
+### *Differences from memstechtip's Core*
+1. Removes support for x86 (32-bit) and arm64 (Arm processor) in order to make the file more readable. **Only supports amd64** (x86-64, 64 bit processor version used by Intel and AMD)
+2. Keeps NotePad & Snipping Tool
+3. Keeps Windows Photos App
+4. Does not align taskbar to the left
+5. Sets UI, input, etc. language to en-US (attempt to bypass manual installer setup, didnt work)
+6. Set PC name to SheepPC
+7. Automatically create & log into Admin Sheep account
+8. Disable-ComputerRestore on the C drive
+9. Show hidden files & Show system files
+10. Automatically sign into my wifi
+11. Format disk automatically instead of interactive setup
+> [!WARNING]
+> Using the 11th version will cause Windows to ask you for a product key. If you're installing windows on a device that previously had windows, you should be able to ignore this step and let windows find the key from the device hardware after installation. If this doesn't work, you'll have a faint Activate Windows watermark unfortunately.
+
+TODO:
+- [ ] 12. Install a web browser after logging in for the first time (probably firefox or Thorium)
+- [ ] 13. After installing the browser, run my long `winget install` script. Or alternatively just create a file *containing* my winget install script.
+- [ ] 14. Create settings and other user files in the default locations, such as for PowerToys settings, or browser history, etc.
+
+Other notes:
+- NightLight is incredibly stupid setting that has to be read in hex values and is difficult to set a registry key for, AFAIK. Open an Issue or PR if you know how.
+- There is no registry key to turn on Clipboard History (Win+V). There's a registry key (on by default) which turns on the *feature* that is clipboard history, but there is no registry key which actually toggles history on.
+- 
+
+---
+<details> <summary>Reveal Original README.md</summary>
+
 # Memory’s Tech Tips’ Unattended Windows Installation
 
 ## Overview
@@ -174,3 +208,4 @@ In short, you need to include the `autounattend.xml` answer file on your Windows
 I hope these Unattended Windows Answer files helps streamline the Windows installation process as much as it has for me. Feel free to join my [Discord Community](https://www.discord.gg/zWGANV8QAX) or leave Your feedback and suggestions in the [Discussions](https://github.com/memstechtips/UnattendedWinstall/discussions) as they are always welcome! Also, if you find these scripts useful, consider giving this repository a star ⭐ on GitHub and if you want to support the project, consider donating on [PayPal.](https://paypal.me/memstech)
 
 Happy installing!
+</summary>

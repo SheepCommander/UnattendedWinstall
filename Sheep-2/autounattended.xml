@@ -303,12 +303,7 @@ Where-Object -FilterScript {
     'Media.WindowsMediaPlayer';
     'Microsoft.Windows.WordPad';
   );
-} | Remove-WindowsCapability -Online
-
-Get-WindowsOptionalFeature -Online |
-Where-Object -Property 'FeatureName' -In -Value @(
-  'Microsoft-SnippingTool';
-) | Disable-WindowsOptionalFeature -Online -Remove -NoRestart]]>
+} | Remove-WindowsCapability -Online]]>
     </File>
     <!--Powershell Script to Run Various Tweaks, Most of These are from the Chris Titus Tech Windows Utility (Credit:https://christitus.com/windows-tool/)-->
     <File path="C:\Windows\Setup\Scripts\wintweaks.ps1">
@@ -1518,14 +1513,14 @@ $_Press_Enter
     <File path="C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml">
       <![CDATA[
 <LayoutModificationTemplate Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
-	<LayoutOptions StartTileGroupCellWidth="6" />
-	<DefaultLayoutOverride>
-		<StartLayoutCollection>
-			<StartLayout GroupCellWidth="6" xmlns="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" />
-		</StartLayoutCollection>
-	</DefaultLayoutOverride>
+  <LayoutOptions StartTileGroupCellWidth="6" />
+  <DefaultLayoutOverride>
+    <StartLayoutCollection>
+      <StartLayout GroupCellWidth="6" xmlns="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" />
+    </StartLayoutCollection>
+  </DefaultLayoutOverride>
 </LayoutModificationTemplate>
-		]]>
+    ]]>
     </File>
   </Extensions>
 </unattend>
