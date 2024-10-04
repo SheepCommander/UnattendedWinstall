@@ -226,7 +226,7 @@ foreach( $file in $Document.unattend.Extensions.File ) {
     };
     [System.IO.File]::WriteAllBytes( $path, ( $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() ) ) );
 }
-		</ExtractScript>
+    </ExtractScript>
     <!--Removes Preinstalled Bloatware Apps-->
     <File path="C:\Windows\Setup\Scripts\remove-packages.ps1">
       <![CDATA[
