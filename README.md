@@ -17,7 +17,9 @@ This unattended file is based on the [**Core**](https://github.com/memstechtips/
 10. Automatically sign into my wifi
 11. Format disk automatically instead of interactive setup
 > [!WARNING]
-> Using the 11th version will cause Windows to ask you for a product key. If you're installing windows on a device that previously had windows, you should be able to ignore this step and let windows find the key from the device hardware after installation. If this doesn't work, you'll have a faint Activate Windows watermark unfortunately.
+> The 11th edit causes Windows to ask you for a product key. If you're installing windows on a device that previously had windows, you should be able to ignore this step and let windows find the key from the device hardware after installation. If this doesn't work, you'll have a faint Activate Windows watermark unfortunately.
+> **SheepCore and Sheep-11 are currently identical. Please keep the above in mind.**
+
 
 TODO:
 - [ ] 12. Install a web browser after logging in for the first time (probably firefox or Thorium)
