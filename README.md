@@ -22,14 +22,15 @@ This unattended file is based on the [**Core**](https://github.com/memstechtips/
 
 
 TODO:
-- [ ] 12. Install a web browser after logging in for the first time (probably firefox or Thorium)
-- [ ] 13. After installing the browser, run my long `winget install` script. Or alternatively just create a file *containing* my winget install script.
-- [ ] 14. Create settings and other user files in the default locations, such as for PowerToys settings, or browser history, etc.
+- [ ] 12. Create settings and other user files in the default locations, such as for PowerToys settings, or browser history, etc.
+- [ ] ??. Install a web browser after logging in for the first time (probably firefox or Thorium)
+- [ ] ??. After installing the browser, run my long `winget install` script. Or alternatively just create a file *containing* my winget install script.
 
 Other notes:
 - NightLight is incredibly stupid setting that has to be read in hex values and is difficult to set a registry key for, AFAIK. Open an Issue or PR if you know how.
 - There is no registry key to turn on Clipboard History (Win+V). There's a registry key (on by default) which turns on the *feature* that is clipboard history, but there is no registry key which actually toggles history on.
-- 
+- I am _not sure_ if there is a registry key for the "Show my snapped windows when I hover over taskbar ... and when I press Alt+Tab". This is on by default but i usually want it off as it pollutes my Alt Tab menu.
+- I am also not sure if there is a reg key for "When I snap a window, suggest what I can snap next to it". It is off by default but i usually turn it on as i will typically snap two or four windows side by side and this makes it faster to do so.
 
 ---
 <details> <summary>Reveal Original README.md</summary>
