@@ -22,7 +22,8 @@ This unattended file is based on the [**Core**](https://github.com/memstechtips/
 
 
 TODO:
-- [ ] 12. Create settings and other user files in the default locations, such as for PowerToys settings, or browser history, etc.
+- [ ] 12. Add regkeys to set Notepad as default app for .gitignore, .stignore, and .gitattributes
+- [ ] 13. Create settings and other user files in the default locations, such as for PowerToys settings, or browser history, etc.
 - [ ] ??. Install a web browser after logging in for the first time (probably firefox or Thorium)
 - [ ] ??. After installing the browser, run my long `winget install` script. Or alternatively just create a file *containing* my winget install script.
 
