@@ -16,14 +16,15 @@ This unattended file is based on the [**Core**](https://github.com/memstechtips/
 9. Show hidden files & Show system files
 10. Automatically sign into my wifi
 11. Format disk automatically instead of interactive setup
+12. Set the "Double-click Speed" to 200ms (default is 480ms)
 > [!WARNING]
 > The 11th edit causes Windows to ask you for a product key. If you're installing windows on a device that previously had windows, you should be able to ignore this step and let windows find the key from the device hardware after installation. If this doesn't work, you'll have a faint Activate Windows watermark unfortunately.
 > **SheepCore and Sheep-11 are currently identical. Please keep the above in mind.**
 
 
 TODO:
-- [ ] 12. Add regkeys to set Notepad as default app for .gitignore, .stignore, and .gitattributes
-- [ ] 13. Create settings and other user files in the default locations, such as for PowerToys settings, or browser history, etc.
+- [ ] 13. Add regkeys to set Notepad as default app for .gitignore, .stignore, and .gitattributes
+- [ ] 14. Create settings and other user files in the default locations, such as for PowerToys settings, or browser history, etc.
 - [ ] ??. Install a web browser after logging in for the first time (probably firefox or Thorium)
 - [ ] ??. After installing the browser, run my long `winget install` script. Or alternatively just create a file *containing* my winget install script.
 
