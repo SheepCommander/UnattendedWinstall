@@ -19,7 +19,7 @@ This unattended file is based on the [**Core**](https://github.com/memstechtips/
 12. Set the "Double-click Speed" to 200ms (default is 480ms)
 > [!WARNING]
 > The 11th edit causes Windows to ask you for a product key. If you're installing windows on a device that previously had windows, you should be able to ignore this step and let windows find the key from the device hardware after installation. If this doesn't work, you'll have a faint Activate Windows watermark unfortunately.
-> **SheepCore and Sheep-11 are currently identical. Please keep the above in mind.**
+> **SheepCore includes the Sheep-11 change and will format your PC. Please keep the above in mind.**
 
 
 TODO:
