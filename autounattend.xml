@@ -2675,6 +2675,7 @@ Windows Registry Editor Version 5.00
 ; APPEARANCE AND PERSONALIZATION
 ; open file explorer to this pc
 ; show file name extensions
+; show hidden files
 ; disable display file size information in folder tips
 ; disable show pop-up description for folder and desktop items
 ; disable show preview handlers in preview pane
@@ -2688,7 +2689,7 @@ Windows Registry Editor Version 5.00
 ; more pins personalization start
 ; disable show account-related notifications
 ; disable show recently opened items in start, jump lists and file explorer
-; left taskbar alignment
+; ; left taskbar alignment
 ; remove chat from taskbar
 ; remove task view from taskbar
 ; remove copilot from taskbar
@@ -2699,6 +2700,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "LaunchTo"=dword:00000001
 "HideFileExt"=dword:00000000
+"Hidden"=dword:00000001
 "FolderContentsInfoTip"=dword:00000000
 "ShowInfoTip"=dword:00000000
 "ShowPreviewHandlers"=dword:00000000
@@ -2712,7 +2714,7 @@ Windows Registry Editor Version 5.00
 "Start_Layout"=dword:00000001
 "Start_AccountNotifications"=dword:00000000
 "Start_TrackDocs"=dword:00000000 
-"TaskbarAl"=dword:00000000
+; "TaskbarAl"=dword:00000000
 "TaskbarMn"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
 "ShowCopilotButton"=dword:00000000
@@ -3132,6 +3134,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "LaunchTo"=-
 "HideFileExt"=dword:00000001
+"Hidden"=dword:00000002
 "FolderContentsInfoTip"=-
 "ShowInfoTip"=dword:00000001
 "ShowPreviewHandlers"=-
