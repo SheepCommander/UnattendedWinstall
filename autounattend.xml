@@ -2079,6 +2079,10 @@ function Set-RecommendedHKLMRegistry {
     $MultilineComment = @"
 Windows Registry Editor Version 5.00
 
+; Remove "Add to Favorites" Context Menu
+
+[-HKEY_CLASSES_ROOT\*\shell\pintohomefile]
+
 ; ; Adds "Take Ownership" to the Right Click Context Menu for All Users
                 
 ; [-HKEY_CLASSES_ROOT\*\shell\TakeOwnership]
