@@ -2080,8 +2080,11 @@ function Set-RecommendedHKLMRegistry {
 Windows Registry Editor Version 5.00
 
 ; Remove "Add to Favorites" Context Menu
-
 [-HKEY_CLASSES_ROOT\*\shell\pintohomefile]
+
+; Remove "Share" Context Menu
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{e2bf9676-5f8f-435c-97eb-11607a5bedf7}"="Share"
 
 ; ; Adds "Take Ownership" to the Right Click Context Menu for All Users
                 
@@ -2449,6 +2452,23 @@ Windows Registry Editor Version 5.00
 ; Reverts Games Scheduling Category to Default
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
 "Scheduling Category"="Medium" ; Default value is "Medium"
+
+; Adds "Add to Favorites" to Context Menu
+[-HKEY_CLASSES_ROOT\*\shell\pintohomefile]
+
+[HKEY_CLASSES_ROOT\*\shell\pintohomefile]
+"CommandStateHandler"="{b455f46e-e4af-4035-b0a4-cf18d2f6f28e}"
+"CommandStateSync"=""
+"MUIVerb"="@shell32.dll,-51389"
+"NeverDefault"=""
+"SkipCloudDownload"=dword:00000000
+
+[HKEY_CLASSES_ROOT\*\shell\pintohomefile\command]
+"DelegateExecute"="{b455f46e-e4af-4035-b0a4-cf18d2f6f28e}"
+
+; Adds "Share" to Context Menu
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{e2bf9676-5f8f-435c-97eb-11607a5bedf7}"=-
 
 ; Removes "Take Ownership" from Context Menu
 [-HKEY_CLASSES_ROOT\*\shell\TakeOwnership]
