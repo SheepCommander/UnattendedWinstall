@@ -1618,7 +1618,7 @@ $appxPackages = @(
     'MicrosoftCorporationII.MicrosoftFamily', 'Microsoft.WindowsFeedbackHub', 'Microsoft.GetHelp',
     'microsoft.windowscommunicationsapps', 'Microsoft.WindowsMaps', 'Microsoft.ZuneVideo',
     'Microsoft.BingNews', 'Microsoft.MicrosoftOfficeHub', 'Microsoft.Office.OneNote',
-    'Microsoft.OutlookForWindows', 'Microsoft.People', 'Microsoft.Windows.Photos',
+    'Microsoft.OutlookForWindows', 'Microsoft.People', 
     'Microsoft.PowerAutomateDesktop', 'MicrosoftCorporationII.QuickAssist', 'Microsoft.SkypeApp',
     'Microsoft.MicrosoftSolitaireCollection', 'Microsoft.MicrosoftStickyNotes', 'MSTeams',
     'Microsoft.Getstarted', 'Microsoft.Todos', 'Microsoft.WindowsSoundRecorder', 'Microsoft.BingWeather',
@@ -1627,8 +1627,11 @@ $appxPackages = @(
     'Microsoft.XboxSpeechToTextOverlay', 'Microsoft.GamingApp', 'Microsoft.YourPhone', 'Microsoft.OneDrive',
     'Microsoft.549981C3F5F10', 'Microsoft.MixedReality.Portal', 'Microsoft.ScreenSketch'
     'Microsoft.Windows.Ai.Copilot.Provider', 'Microsoft.Copilot', 'Microsoft.Copilot_8wekyb3d8bbwe',
-    'Microsoft.WindowsMeetNow', 'Microsoft.WindowsStore', 'Microsoft.Paint', 'Microsoft.MSPaint'
-)
+    'Microsoft.WindowsMeetNow', 'Microsoft.MSPaint'
+) # Keep 'Microsoft.Windows.Photos', 'Microsoft.WindowsStore', 'Microsoft.Paint', 
+#-Photos: although ImageGlass and Qimgv are great, they don't feel better than Photos.
+#-Store: Needed for Minecraft, and annoying to re-install. Xbox, on the other hand, installs automatically.
+#-Paint: Paint is still sometimes nice.
 
 # Define Windows Capabilities
 $capabilities = @(
